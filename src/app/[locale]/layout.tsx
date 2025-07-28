@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { Inter } from 'next/font/google'
 import myCustomFont from '../../../public/fonts/MyCustomFont'
+import Providers from '@/providers/providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +27,10 @@ console.log(messages, "messagesmessages")
     <html lang={locale}>
       <body className={locale === 'ar' ? myCustomFont.className :inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages} >
-          {children}
+          <Providers>
+{children}
+          </Providers>
+          
         </NextIntlClientProvider>
       </body>
     </html>
