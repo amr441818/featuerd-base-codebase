@@ -17,17 +17,17 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode,
-  params: Promise<{ locale: string }> // ✅ Not a Promise
+  params: Promise<{ locale: string }> 
 }) {
   const { locale } =  await params;
-console.log(locale, 'langu')
+
   const messages = (await import(`/messages/${locale}.json`)).default;
 console.log(messages, "messagesmessages")
   return (
-    <html lang={locale}>
+    <html lang={locale} dir="rtl">
       <body className={locale === 'ar' ? myCustomFont.className :inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages} >
-          <Providers>
+          <Providers locale={locale}>
 {children}
           </Providers>
           

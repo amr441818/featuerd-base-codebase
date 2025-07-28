@@ -1,6 +1,150 @@
 {
-  "HomePage": {
-    "title": "مرحبا",
-    "about": "Go to the about page"
+  "register": {
+    "createAccountTitle": "إنشاء حساب جديد",
+    "createAccountSubtitle": "قم بملأ بياناتك لتسجيل حساب جديد",
+    "usernamePlaceholder": "اسم المستخدم",
+    "emailPlaceholder": "البريد الإلكتروني",
+    "usernameRequired": "هذا الحقل مطلوب",
+    "emailRequired": "هذا الحقل مطلوب",
+    "submitButton": "إنشاء",
+    "alreadyHaveAccount": "لديك حساب بالفعل ؟",
+    "loginButton": "تسجيل الدخول",
+    "mobile": "رقم الجوال",
+    "IDNumber": "رقم الهوية",
+    "uploadIdAttachment": "قم بتحميل مرفق الهوية",
+    "client": "عميل",
+    "provider": "مقدم خدمة",
+    "select": "اختيار",
+    "namePlaceholder": "الإسم",
+    "mobilePlaceholder": "رقم الجوال",
+    "logo": "اللوجو",
+    "location": "الموقع",
+    "areaPlaceholder": "المنطقة",
+    "submit": "انشاء حساب",
+    "login": "تسجيل الدخول",
+    "licence": "ملف الترخيص",
+    "commercialNumber": "رقم السجل",
+    "commercialImage": "إرفاق صورة السجل",
+    "category": "التصنيف",
+    "area": "المنطقة",
+    "about": "نبذة عن المنشأة",
+    "validation": {
+      "nameRequired": "الاسم مطلوب",
+      "mobileRequired": "رقم الجوال مطلوب",
+      "areaRequired": "المنطقة مطلوبة",
+      "logoRequired": "اللوجو مطلوب",
+      "aboutRequired": "نبذة عن المنشأة مطلوبة"
+    },
+    "save": "حفظ",
+    "confirmNewMobile": "تأكيد رقم الجوال الجديد",
+    "confirmNewMobileSubtitle": "قم بإدخال كود التحقق المرسل إلى رقم الجوال الجديد"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "subtitle": "قم بإدخال البريد الإلكتروني أو رقم العضوية لتسجيل الدخول إلى حسابك",
+    "mobilePlaceholder": "رقم الجوال",
+    "mobileRequired": "هذا الحقل مطلوب",
+    "loginButton": "الدخول",
+    "noAccount": "ليس لديك حساب ؟",
+    "registerButton": "إنشاء حساب جديد",
+    "client": "عميل",
+    "provider": "مقدم خدمة",
+    "select": "اختيار"
+  },
+  "logout": {
+    "title": "تسجيل الخروج",
+    "confirmation": "هل أنت متأكد من تسجيل الخروج من حسابك ؟",
+    "reason": "أدخل سبب الحذف",
+    "reasonRequired": "هذا الحقل مطلوب",
+    "yes": "تأكيد الخروج",
+    "cancel": "إلغاء",
+    "success": "تم تسجيل الخروج بنجاح"
+  },
+  "deleteAccount": {
+    "title": "حذف الحساب",
+    "confirmation": "إذ كنت متأكد من حذف حسابك من المنصة نهائيا وحذف جميع البيانات المرتبطه به قم بكتابة سبب الحذف",
+    "reason": "أدخل سبب الحذف",
+    "reasonRequired": "هذا الحقل مطلوب",
+    "yes": "تأكيد حذف الحساب",
+    "cancel": "إلغاء",
+    "success": "تم حذف الحساب بنجاح"
+  },
+
+  "otp": {
+    "title": "كود التحقق",
+    "submit": "تحقق",
+    "resendPrompt": "لم يصلك الكود؟",
+    "resendAction": "إعادة إرساله",
+    "resendToast": "تم إعادة إرسال الكود",
+    "resendWait": "يمكنك طلب إعادة إرسال الكود بعد ",
+    "second": " ثانية",
+    "allow": "يرجى السماح بالإشعارات لتلقي التحديثات."
+  },
+  "navbarFooter": {
+    "title": "روابط سريعة",
+    "home": "الرئيسية",
+    "about": "عن المنصة",
+    "latestPosts": "أحدث المنشورات",
+    "opportunities": "ساحة الفرص",
+    "companies": "الشركات",
+    "login": "تسجيل الدخول",
+    "language": "العربية",
+    "copyright": "جميع الحقوق محفوظة - خود @2024",
+    "newAccount": "انشاء حساب",
+    "terms": "الشروط والأحكام",
+    "privacyPolicy": "سياسة الخصوصية",
+    "usagePolicy": "سياسة الإستخدام",
+    "profile": "الملف الشخصي",
+    "chats": "المحادثات",
+    "EditProfile": "تعديل ببيانات حسابي",
+    "EditPassword": "تعديل كلمة المرور",
+    "deleteAccount": "حذف الحساب",
+    "logout": "تسجيل الخروج",
+    "greeting": "مرحبا,"
+  },
+
+  "navigation": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "contact": "اتصل بنا"
+  },
+  "common": {
+    "loading": "جاري التحميل",
+    "error": "حدث خطأ",
+    "success": "تم بنجاح"
+  },
+  "error": {
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDesc": "عذراً، الصفحة التي تبحث عنها غير موجودة",
+    "backHome": "العودة للرئيسية",
+    "error": "حدث خطأ",
+    "errorDesc": "عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "latestPosts":{
+    "title": "أحدث المنشورات",
+    "noPosts": "لا يوجد منشورات",
+    "seeAllPosts": "عرض جميع المنشورات"
+  },
+  "opportunitySquare":{
+    "title": "ساحة الفرص",
+    "noOpportunities": "لا يوجد فرص",
+    "seeAllOpportunities": "عرض جميع الفرص",
+    "detailsOpportunity":"عرض تفاصيل الفرصة",
+    "ended": "منتهية"
+  },
+  "Companies":{
+    "title": "الشركات",
+    "noCompanies": "لا يوجد شركات",
+    "seeAllCompanies": "عرض جميع الشركات",
+    "detailsCompany":"عرض تفاصيل الشركة"
+  },
+  "downloadApp":{
+    "title": "حمل التطبيق الآن",
+    "subtitle": " قم بتحميل تطبيق منصة لينكورا",
+    "downloadButton": "تحميل التطبيق",
+    "availableOn": "متوفر على",
+    "appStore": "تحميل نسخة الأيفون",
+    "googlePlay": "تحميل نسخة الأندرويد"
   }
 }

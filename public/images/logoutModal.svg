@@ -1,0 +1,8 @@
+<svg id="vuesax_linear_logout" data-name="vuesax/linear/logout" xmlns="http://www.w3.org/2000/svg" width="42.698" height="42.698" viewBox="0 0 42.698 42.698">
+  <g id="logout">
+    <path id="Vector" d="M0,9.109,4.554,4.554,0,0" transform="translate(31.027 16.901)" fill="none" stroke="#fdc7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H18.093" transform="translate(17.364 21.456)" fill="none" stroke="#fdc7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="Vector-3" data-name="Vector" d="M14.233,28.465C6.369,28.465,0,23.128,0,14.233S6.369,0,14.233,0" transform="translate(6.689 7.116)" fill="none" stroke="#fdc7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="Vector-4" data-name="Vector" d="M0,0H42.7V42.7H0Z" transform="translate(42.698 42.698) rotate(180)" fill="none" opacity="0"/>
+  </g>
+</svg>

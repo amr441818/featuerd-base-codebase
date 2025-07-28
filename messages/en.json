@@ -1,6 +1,148 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "register": {
+    "createAccountTitle": "Create a New Account",
+    "createAccountSubtitle": "Fill in your details to register a new account",
+    "usernamePlaceholder": "Username",
+    "emailPlaceholder": "Email Address",
+    "usernameRequired": "This field is required",
+    "emailRequired": "This field is required",
+    "submitButton": "Create",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginButton": "Login",
+    "mobile": "Mobile Number",
+    "IDNumber": "ID Number",
+    "uploadIdAttachment": "Upload ID Attachment",
+    "client": "Client",
+    "provider": "Service Provider",
+    "select": "Select",
+    "namePlaceholder": "Name",
+    "mobilePlaceholder": "Mobile Number",
+    "logo": "Logo",
+    "location": "Location",
+    "areaPlaceholder": "Area",
+    "submit": "Create Account",
+    "login": "Login",
+    "licence": "License File",
+    "commercialNumber": "Commercial Registration Number",
+    "commercialImage": "Attach Commercial Registration Image",
+    "category": "Category",
+    "area": "Area",
+    "about": "About the Facility",
+    "validation": {
+      "nameRequired": "Name is required",
+      "mobileRequired": "Mobile number is required",
+      "areaRequired": "Area is required",
+      "logoRequired": "Logo is required",
+      "aboutRequired": "About the facility is required"
+    },
+    "save": "Save",
+    "confirmNewMobile": "Confirm New Mobile Number",
+    "confirmNewMobileSubtitle": "Enter the verification code sent to the new mobile number"
+  },
+
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your email or membership ID to log in to your account",
+    "mobilePlaceholder": "Mobile",
+    "mobileRequired": "This field is required",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "registerButton": "Create a new account",
+    "client": "Client",
+    "provider": "Service Provider",
+    "select": "Select"
+  },
+  "logout": {
+    "title": "Logout",
+    "confirmation": "Are you sure you want to logout of your account?",
+    "yes": "Confirm Logout",
+    "cancel": "Cancel",
+    "success": "Logged out successfully"
+  },
+  "deleteAccount": {
+    "title": "Delete Account",
+    "confirmation": "If you are sure you want to permanently delete your account and all associated data, please provide a reason for deletion.",
+    "reason":"Enter deletion reason",
+    "reasonRequired": "This field is required",
+    "yes": "Confirm Deletion",
+    "cancel": "Cancel",
+    "success": "Account deleted successfully"
+  },
+  "otp": {
+    "title": "Verification Code",
+    "submit": "Verify",
+    "resendPrompt": "Didn't receive the code?",
+    "resendAction": "Resend",
+    "resendToast": "Code resent successfully",
+    "resendWait": "You can request a new code in ",
+    "second": "sec",
+    "allow": "Please allow notifications to receive updates."
+  },
+  "navbarFooter": {
+    "title": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "latestPosts": "Latest Posts",
+    "opportunities": "Opportunities",
+    "companies": "Companies",
+    "login": "Login",
+    "language": "English",
+    "copyright": "All rights reserved - Khod © 2024",
+    "newAccount": "New account",
+    "terms": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "usagePolicy": "Usage Policy",
+    "profile": "Profile",
+    "chats": "Chats",
+    "EditProfile": "Edit Profile",
+    "EditPassword": "Edit Password",
+    "deleteAccount": "Delete Account",
+    "logout": "Logout",
+    "greeting": "Hello,"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading",
+    "error": "Error occurred",
+    "success": "Success"
+  },
+  "error": {
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDesc": "Sorry, the page you are looking for does not exist",
+    "backHome": "Back to Home",
+    "error": "Error Occurred",
+    "errorDesc": "Sorry, something went wrong. Please try again",
+    "tryAgain": "Try Again"
+  },
+  "latestPosts":{
+    "title": "Latest Posts",
+    "noPosts": "No posts available",
+    "seeAllPosts": "See all posts"
+  },
+  "opportunitySquare":{
+    "title": "Opportunity Square",
+    "noOpportunities": "No opportunities available",
+    "seeAllOpportunities": "See all opportunities",
+     "detailsOpportunity": "View opportunity details",
+    "ended": "Ended"
+  },
+  "Companies":{
+    "title": "Companies",
+    "noCompanies": "No companies available",
+    "seeAllCompanies": "See all companies",
+    "detailsCompany":"View company details"
+  },
+  "downloadApp":{
+    "title": "Download the app now",
+    "subtitle": "Download the Linkora platform app",
+    "downloadButton": "Download the app",
+    "availableOn": "Available on",
+    "appStore": "Download for iPhone",
+    "googlePlay": "Download for Android"
   }
 }

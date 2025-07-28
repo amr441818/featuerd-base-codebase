@@ -1,0 +1,57 @@
+/* --------------------------------------------------------- */
+/* Custom Pagination for Swiper */
+.mySwiper :global(.swiper-pagination-bullet) {
+  width: 15px;
+  height: 10px;
+  border-radius: 5px;
+  background: transparent;
+  opacity: 1;
+  display: inline-block;
+  /* border: 1px solid #62c483; */
+  background: #dfdfdf;
+}
+
+.mySwiper :global(.swiper-pagination-bullet-active) {
+  width: 25px;
+  background: #62c483;
+}
+
+.mySwiper :global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+  bottom: 0px;
+  padding-inline: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+/* Show bullets on large screens (768px and up) */
+@media (min-width: 768px) {
+  .mySwiper :global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+    padding-inline: 20px;
+  }
+  .CustomContainer {
+    padding-inline-start: 20px;
+  }
+}
+/* Show bullets on large screens (1280px and up) */
+@media (min-width: 1280px) {
+  .mySwiper :global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+    padding-inline: 96px;
+  }
+  .CustomContainer {
+    padding-inline-start: 90px;
+  }
+}
+/* Show bullets on large screens (1536px and up) */
+@media (min-width: 1536px) {
+  .mySwiper :global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+    padding-inline: 139px;
+  }
+  .CustomContainer {
+    padding-inline-start: 139px;
+  }
+}
+
+/* //////////////////////////////////////////////////////////////// */
