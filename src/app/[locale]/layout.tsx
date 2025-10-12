@@ -27,6 +27,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir='rtl'>
+      {' '}
       <body className={locale === 'ar' ? myCustomFont.className : inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers locale={locale}>{children}</Providers>
