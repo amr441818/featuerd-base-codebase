@@ -1,39 +1,30 @@
-import axios from "axios";
-const apiServiceCall = async ({
-  url,
-  method,
-  body,
-  headers,
-}: {
+import axios, { AxiosRequestConfig } from 'axios';
+
+type ApiServiceCallProps = {
   url: string;
   method?: string;
-  body?: any;
-  headers?: any;
-}) => {
-  console.log("api service call run");
-  console.log("data we need to see", body);
+  body?: unknown;
+  headers?: AxiosRequestConfig['headers'];
+};
 
+const apiServiceCall = async ({ url, method, body, headers }: ApiServiceCallProps) => {
   try {
-    // console.log( "headers:",headers)
     const response = await axios({
-      method: method?.toUpperCase() || "GET",
+      method: method?.toUpperCase() || 'GET',
       url: `${process.env.NEXT_PUBLIC_API_URL}${url}`,
       data: body,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         ...headers,
       },
-      // Spread any custom config passed to the function
     });
-    // console.log("xxxxxxxxxxxxxxx", response?.data, method);
-    return response?.data;
+
+    return response.data;
   } catch (error) {
-    // console.log(error)
-    // Handle error (you could add more custom error handling here)
     if (axios.isAxiosError(error)) {
-      throw {data:error.response?.data, status: error.response?.status} ;
+      throw { data: error.response?.data, status: error.response?.status };
     } else {
-      throw new Error("An unexpected error occurred");
+      throw new Error('An unexpected error occurred');
     }
   }
 };

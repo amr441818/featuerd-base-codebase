@@ -11,7 +11,7 @@ declare module 'aos' {
     /** Animation easing function */
     easing?: string;
     /** Additional settings */
-    [key: string]: any;
+    [key: string]: unknown;
   }
 
   interface AosInstance {
@@ -20,12 +20,12 @@ declare module 'aos' {
      * @param options AOS initialization options
      */
     init(options?: AosOptions): void;
-    
+
     /**
      * Refresh all AOS animations
      */
     refresh(): void;
-    
+
     /**
      * Hard refresh all AOS animations
      */
