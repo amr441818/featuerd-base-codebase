@@ -1,2 +1,2 @@
-echo "🔍 Running ESLint + TypeScript checks..."
+echo "🔍 Running ESLint..."
 npx lint-staged
