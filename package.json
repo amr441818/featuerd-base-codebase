@@ -14,8 +14,8 @@
     "*.{ts,tsx,js,jsx}": [
       "eslint --fix --max-warnings=0"
     ],
-    "*.{ts,tsx}": [
-      "tsc --noEmit --skipLibCheck"
+    "**/*.{ts,tsx}": [
+      "npm run type-check"
     ]
   },
   "dependencies": {
