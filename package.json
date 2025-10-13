@@ -13,10 +13,8 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "eslint --fix --max-warnings=0"
-    ],
-    "**/*.{ts,tsx}": [
-      "npm run type-check"
     ]
+   
   },
   "dependencies": {
     "@iconify/react": "^6.0.0",

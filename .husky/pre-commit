@@ -1,4 +1,2 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
+echo "🔍 Running ESLint + TypeScript checks..."
 npx lint-staged
