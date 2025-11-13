@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CloseIcon from '../../../../../public/assets/svgs/CloseIcon';
+import { EyeClosedIcon } from 'lucide-react';
 
 type ModalProps = {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ const CustomModal = (props: ModalProps) => {
             <div className='flex'>
               {' '}
               <button onClick={closeModal} className='text-[14px] text-[#969696]'>
-                <CloseIcon />
+                <EyeClosedIcon />
               </button>
             </div>
 

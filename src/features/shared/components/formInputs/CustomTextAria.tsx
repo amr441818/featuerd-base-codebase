@@ -1,6 +1,4 @@
-import { CustomTextAriaProps } from '../../../../types/formInputs';
-
-const CustomTextAria = (props: CustomTextAriaProps) => {
+const CustomTextAria = (props: any) => {
   return (
     <div className={`col-span-12 ${props?.className ? props?.className : ''}`}>
       {props.label && (
