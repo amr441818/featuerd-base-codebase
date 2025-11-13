@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 import { Icon } from '@iconify/react';
 
-import { customInputProps } from '../../../../types/formInputs';
+import { CustomInputProps } from '@/types/formInputs';
 
-const CustomInput = (props: customInputProps) => {
+const CustomInput = (props: CustomInputProps) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const CustomInput = (props: customInputProps) => {
       <input
         type={show ? 'text' : props.type}
         placeholder={props.placeholder}
-        name={props.name}
         {...props.register(props.name, props?.validation)}
         required={props.required ? props.required : false}
         disabled={props.disabled ? props.disabled : false}

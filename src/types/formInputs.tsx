@@ -103,7 +103,7 @@ export type CustomInputProps<TFieldValues extends FieldValues = FieldValues> = {
   validation?: RegisterOptions<TFieldValues, Path<TFieldValues>>;
   type: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'date';
   placeholder: string;
-  name: Path<TFieldValues>;
+  name: string;
   error?: string;
   className?: string;
   required?: boolean;

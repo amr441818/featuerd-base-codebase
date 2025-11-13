@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 
+import { Calendar1 } from 'lucide-react';
 import { Control, useController } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
@@ -9,8 +10,6 @@ import { Calendar } from '@/components/ui/calendar';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-
-import DateIcon from '../../../../../public/assets/svgs/DateIcon';
 
 // or use CalendarIcon from lucide-react
 
@@ -85,7 +84,7 @@ export function DatePickerField({
               disabled={disabled}
               className='absolute right-2 top-1/2 size-6 -translate-y-1/2'
             >
-              <DateIcon />
+              <Calendar1 />
               <span className='sr-only'>{placeholder}</span>
             </Button>
           </PopoverTrigger>
