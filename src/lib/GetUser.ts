@@ -9,7 +9,7 @@ import { AuthResponse } from '@/features/shared/types/global copy';
 
 export const GetUSer = async () => {
   const userData = (await getServerSession(authOptions)) as AuthResponse | null;
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
 

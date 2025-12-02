@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { Icon } from '@iconify/react';
 
-import { CustomInputProps } from '@/types/formInputs';
+import { CustomInputProps } from '../../types/formInputs';
 
 const CustomInput = (props: CustomInputProps) => {
   const [show, setShow] = useState(false);
