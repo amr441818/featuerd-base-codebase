@@ -1,7 +1,7 @@
-import { CompanyI } from "./company";
+import { CompanyI } from './company';
 
 export interface OpportunityI {
- id: number;
+  id: number;
   activity_id: number;
   activity_name: string;
   description: string;

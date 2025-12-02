@@ -1,4 +1,4 @@
-import { CompanyI } from "./company";
+import { CompanyI } from './company';
 
 export interface PostI {
   id: string;
@@ -10,5 +10,5 @@ export interface PostI {
   is_liked: boolean;
   company: CompanyI;
   thumbnail: string;
-  created_at: string; 
+  created_at: string;
 }

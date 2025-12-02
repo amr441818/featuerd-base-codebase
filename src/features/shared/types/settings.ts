@@ -1,4 +1,4 @@
-import { FAQI } from "./FAQ";
+import { FAQI } from './FAQ';
 
 export interface SettingsI {
   title: string | null;
