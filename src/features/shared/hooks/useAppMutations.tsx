@@ -1,40 +1,26 @@
 import { useMutation } from '@tanstack/react-query';
-import { useLocale } from 'next-intl';
 import { toast } from 'react-hot-toast';
 
-import apiServiceCall from '@/lib/apiServiceCall';
-import { errorsHandling } from '@/lib/errorHandling';
+import { clientErrorHandling } from '@/lib/errors/clientErrorHandling';
 
+import { ApiError, ApiResponse } from '../types/global copy';
 import { useGetUser } from './useGetUser';
 
-export const useAppMutation = ({
-  url,
-  method = 'POST',
-  headers: customHeaders,
+interface UseAppMutationOptions<TData, TVariables> {
+  mutationFn: (variables: TVariables, headers: any) => Promise<ApiResponse<TData>>;
+  onSuccess?: (data: ApiResponse<TData>) => void;
+  onError?: (error: ApiError) => void;
+}
+
+export const useAppMutation = <TData, TVariables>({
+  mutationFn,
   onSuccess,
   onError,
-}: {
-  url: string;
-  method?: 'POST' | 'PUT' | 'PATCH' | 'DELETE';
-  headers?: any;
-  onSuccess?: (data: any) => void;
-  onError?: (error: any) => void;
-}) => {
+}: UseAppMutationOptions<TData, TVariables>) => {
   const { headers: userHeaders } = useGetUser();
-  const locale = useLocale();
 
-  const finalHeaders = customHeaders || userHeaders;
-
-  return useMutation({
-    mutationKey: [url],
-
-    mutationFn: (body?: any) =>
-      apiServiceCall({
-        method,
-        url,
-        headers: finalHeaders,
-        body: body,
-      }),
+  return useMutation<ApiResponse<TData>, ApiError, TVariables>({
+    mutationFn: (variables) => mutationFn(variables, userHeaders),
 
     onSuccess: (data) => {
       toast.success(data?.message);
@@ -42,7 +28,7 @@ export const useAppMutation = ({
     },
 
     onError: (error) => {
-      errorsHandling(error, locale, true);
+      clientErrorHandling(error);
       onError?.(error);
     },
   });

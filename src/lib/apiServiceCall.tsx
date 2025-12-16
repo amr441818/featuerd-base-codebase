@@ -2,33 +2,29 @@ import axios from 'axios';
 
 import { GetUSer } from '@/lib/GetUser';
 
-const apiServiceCall = async ({
+import { serverErrorHandling } from './errors/serverErrorHandling';
+
+export const apiServiceCall = async ({
   url,
   method,
   body,
   headers,
-  server = false,
 }: {
   url: string;
   method?: string;
   body?: any;
   headers?: any;
-  server?: boolean;
 }) => {
-  console.log('api service call run');
+  const isServer = typeof window === 'undefined';
 
   let finalHeaders: any = {
     'Content-Type': 'application/json',
     ...headers,
   };
 
-  // ⬅️ If request is on the server → auto-attach user headers
-  if (server) {
+  if (isServer) {
     const { headers: userHeaders } = await GetUSer();
-    finalHeaders = {
-      ...finalHeaders,
-      ...userHeaders,
-    };
+    finalHeaders = { ...finalHeaders, ...userHeaders };
   }
 
   try {
@@ -41,13 +37,19 @@ const apiServiceCall = async ({
 
     return response.data;
   } catch (error) {
+    if (isServer) {
+      serverErrorHandling(error);
+    }
+
     if (axios.isAxiosError(error)) {
       throw {
         data: error.response?.data,
         status: error.response?.status,
       };
     }
+
     throw new Error('Unexpected Error');
   }
 };
+
 export default apiServiceCall;

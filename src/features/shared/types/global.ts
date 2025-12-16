@@ -1,7 +1,7 @@
 export interface ApiResponse<T> {
   data: T;
   success: boolean;
-  message?: string;
+  message: string;
 }
 
 export interface PaginatedResponse<T> {
