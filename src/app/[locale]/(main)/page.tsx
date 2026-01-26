@@ -5,12 +5,10 @@ export const metadata: Metadata = {
   description: 'Your premier destination for beauty clinics and beauty salons.',
 };
 
-interface LayoutProps {
-  params: Promise<{ locale: string }>;
-}
+// interface LayoutProps {
+//   params: Promise<{ locale: string }>;
+// }
 
-export default async function Home({ params }: LayoutProps) {
-  console.log(params);
-
+export default async function Home() {
   return <div className=''>home page</div>;
 }

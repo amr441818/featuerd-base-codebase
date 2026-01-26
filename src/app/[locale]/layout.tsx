@@ -23,11 +23,22 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
 
-  const messages = (await import(`/messages/${locale}.json`)).default;
+  // Only attempt to load messages if it's a valid locale
+  const locales = ['en', 'ar'];
+  if (!locales.includes(locale)) {
+    return null;
+  }
+
+  let messages;
+  try {
+    messages = (await import(`../../../messages/${locale}.json`)).default;
+  } catch (error) {
+    console.error(`Failed to load messages for locale: ${locale}`, error);
+    return null;
+  }
 
   return (
-    <html lang={locale} dir='rtl'>
-      {' '}
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className={locale === 'ar' ? myCustomFont.className : inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers locale={locale}>{children}</Providers>

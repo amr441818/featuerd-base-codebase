@@ -39,7 +39,6 @@
     "confirmNewMobile": "Confirm New Mobile Number",
     "confirmNewMobileSubtitle": "Enter the verification code sent to the new mobile number"
   },
-
   "login": {
     "title": "Login",
     "subtitle": "Enter your email or membership ID to log in to your account",
@@ -62,7 +61,7 @@
   "deleteAccount": {
     "title": "Delete Account",
     "confirmation": "If you are sure you want to permanently delete your account and all associated data, please provide a reason for deletion.",
-    "reason":"Enter deletion reason",
+    "reason": "Enter deletion reason",
     "reasonRequired": "This field is required",
     "yes": "Confirm Deletion",
     "cancel": "Cancel",
@@ -77,6 +76,45 @@
     "resendWait": "You can request a new code in ",
     "second": "sec",
     "allow": "Please allow notifications to receive updates."
+  },
+  "error": {
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDesc": "Sorry, the page you are looking for does not exist",
+    "backHome": "Back to Home",
+    "error": "Error Occurred",
+    "errorDesc": "Sorry, something went wrong. Please try again",
+    "tryAgain": "Try Again"
+  },
+  "validations": {
+    "password_min": "Password must be at least 8 characters long",
+    "password_uppercase": "Password must contain at least one uppercase letter",
+    "password_lowercase": "Password must contain at least one lowercase letter",
+    "password_number": "Password must contain at least one number",
+    "password_symbol": "Password must contain at least one special character",
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Invalid email format",
+    "passwordRequired": "Password is required",
+    "passwordMin": "Password must be at least 6 characters",
+    "passwordConfirmationRequired": "Password confirmation is required",
+    "passwordMismatch": "Passwords do not match",
+    "idNumberRequired": "Employee ID is required",
+    "positionNameRequired": "Job title is required",
+    "purposeNameRequired": "System purpose is required",
+    "companyNameRequired": "Company name is required",
+    "companyFieldRequired": "Company field is required",
+    "companySizeRequired": "Company size is required",
+    "companyLocationRequired": "Company location is required",
+    "projectTitleRequired": "Project title is required",
+    "projectTitleMaxLength": "Project title cannot exceed 50 characters",
+    "programRequired": "Program is required",
+    "descriptionRequired": "Project description is required",
+    "descriptionMaxLength": "Description cannot exceed 1000 characters",
+    "goalsRequired": "At least one goal is required",
+    "estimatedBudgetRequired": "Estimated budget is required",
+    "actualBudgetRequired": "Actual budget is required",
+    "budgetMustBePositive": "Budget must be a positive number"
   },
   "navbarFooter": {
     "title": "Quick Links",
@@ -100,7 +138,6 @@
     "logout": "Logout",
     "greeting": "Hello,"
   },
-
   "navigation": {
     "home": "Home",
     "about": "About",
@@ -111,33 +148,25 @@
     "error": "Error occurred",
     "success": "Success"
   },
-  "error": {
-    "pageNotFound": "Page Not Found",
-    "pageNotFoundDesc": "Sorry, the page you are looking for does not exist",
-    "backHome": "Back to Home",
-    "error": "Error Occurred",
-    "errorDesc": "Sorry, something went wrong. Please try again",
-    "tryAgain": "Try Again"
-  },
-  "latestPosts":{
+  "latestPosts": {
     "title": "Latest Posts",
     "noPosts": "No posts available",
     "seeAllPosts": "See all posts"
   },
-  "opportunitySquare":{
+  "opportunitySquare": {
     "title": "Opportunity Square",
     "noOpportunities": "No opportunities available",
     "seeAllOpportunities": "See all opportunities",
-     "detailsOpportunity": "View opportunity details",
+    "detailsOpportunity": "View opportunity details",
     "ended": "Ended"
   },
-  "Companies":{
+  "Companies": {
     "title": "Companies",
     "noCompanies": "No companies available",
     "seeAllCompanies": "See all companies",
-    "detailsCompany":"View company details"
+    "detailsCompany": "View company details"
   },
-  "downloadApp":{
+  "downloadApp": {
     "title": "Download the app now",
     "subtitle": "Download the Linkora platform app",
     "downloadButton": "Download the app",

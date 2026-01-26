@@ -1,41 +1,27 @@
 import { useQuery } from '@tanstack/react-query';
 
-import apiServiceCall from '@/lib/apiServiceCall';
-
+import { ApiResponse } from '../types/global';
 import { useGetUser } from './useGetUser';
 
-export const useAppQuery = ({
-  queryKey,
-  url,
-  enabled = true,
-  headers: customHeaders,
-}: {
-  queryKey?: string[];
-  url: string;
+interface UseAppQueryOptions<TData = any> {
+  queryKey: string[];
+  queryFn: (headers: any) => Promise<ApiResponse<TData>>;
   enabled?: boolean;
-  headers?: Record<string, string>;
-}) => {
-  const { headers: userHeaders, status } = useGetUser();
+}
 
-  // merge user headers + custom headers
-  const finalHeaders = { ...userHeaders, ...(customHeaders || {}) };
+export const useAppQuery = <TData>({
+  queryKey,
+  queryFn,
+  enabled = true,
+}: UseAppQueryOptions<TData>) => {
+  const { headers: userHeaders, status } = useGetUser();
 
   // avoid running query if session is still loading
   const canRun = enabled && status !== 'loading';
 
-  return useQuery({
-    queryKey: queryKey || [url],
+  return useQuery<ApiResponse<TData>>({
+    queryKey,
     enabled: canRun,
-
-    queryFn: () =>
-      apiServiceCall({
-        method: 'GET',
-        url,
-        headers: finalHeaders,
-      }),
-
-    // retry: false,
-
-    // onError: (err) => errorsHandling(err),
+    queryFn: () => queryFn(userHeaders),
   });
 };

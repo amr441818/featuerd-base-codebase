@@ -7,15 +7,23 @@ import { ApiError, ApiResponse } from '../types/global copy';
 import { useGetUser } from './useGetUser';
 
 interface UseAppMutationOptions<TData, TVariables> {
-  mutationFn: (variables: TVariables, headers: any) => Promise<ApiResponse<TData>>;
+  mutationFn: (
+    variables: TVariables,
+    headers: Record<string, string>,
+  ) => Promise<ApiResponse<TData>>;
+
   onSuccess?: (data: ApiResponse<TData>) => void;
+
   onError?: (error: ApiError) => void;
+
+  disableAutoToast?: boolean;
 }
 
 export const useAppMutation = <TData, TVariables>({
   mutationFn,
   onSuccess,
   onError,
+  disableAutoToast = false,
 }: UseAppMutationOptions<TData, TVariables>) => {
   const { headers: userHeaders } = useGetUser();
 
@@ -23,7 +31,9 @@ export const useAppMutation = <TData, TVariables>({
     mutationFn: (variables) => mutationFn(variables, userHeaders),
 
     onSuccess: (data) => {
-      toast.success(data?.message);
+      if (!disableAutoToast) {
+        toast.success(data?.message);
+      }
       onSuccess?.(data);
     },
 

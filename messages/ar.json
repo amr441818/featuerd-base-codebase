@@ -69,7 +69,6 @@
     "cancel": "إلغاء",
     "success": "تم حذف الحساب بنجاح"
   },
-
   "otp": {
     "title": "كود التحقق",
     "submit": "تحقق",
@@ -79,6 +78,45 @@
     "resendWait": "يمكنك طلب إعادة إرسال الكود بعد ",
     "second": " ثانية",
     "allow": "يرجى السماح بالإشعارات لتلقي التحديثات."
+  },
+  "error": {
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDesc": "عذراً، الصفحة التي تبحث عنها غير موجودة",
+    "backHome": "العودة للرئيسية",
+    "error": "حدث خطأ",
+    "errorDesc": "عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "validations": {
+    "password_min": "فضلاً أدخل كلمة مرور لا تقل عن ٨ خانات",
+    "password_uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+    "password_lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+    "password_number": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    "password_symbol": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+    "firstNameRequired": "الاسم الأول مطلوب",
+    "lastNameRequired": "الاسم الأخير مطلوب",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "invalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordMin": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+    "passwordConfirmationRequired": "تأكيد كلمة المرور مطلوب",
+    "passwordMismatch": "كلمتا المرور غير متطابقتين",
+    "idNumberRequired": "الرقم الوظيفي مطلوب",
+    "positionNameRequired": "المسمى الوظيفي مطلوب",
+    "purposeNameRequired": "الغرض من النظام مطلوب",
+    "companyNameRequired": "اسم الشركة مطلوب",
+    "companyFieldRequired": "مجال الشركة مطلوب",
+    "companySizeRequired": "حجم الشركة مطلوب",
+    "companyLocationRequired": "موقع الشركة مطلوب",
+    "projectTitleRequired": "عنوان المشروع مطلوب",
+    "projectTitleMaxLength": "عنوان المشروع لا يمكن أن يتجاوز 50 حرف",
+    "programRequired": "البرنامج مطلوب",
+    "descriptionRequired": "وصف المشروع مطلوب",
+    "descriptionMaxLength": "الوصف لا يمكن أن يتجاوز 1000 حرف",
+    "goalsRequired": "يجب إضافة هدف واحد على الأقل",
+    "estimatedBudgetRequired": "الميزانية المقدرة مطلوبة",
+    "actualBudgetRequired": "الميزانية الفعلية مطلوبة",
+    "budgetMustBePositive": "الميزانية يجب أن تكون رقم موجب"
   },
   "navbarFooter": {
     "title": "روابط سريعة",
@@ -102,7 +140,6 @@
     "logout": "تسجيل الخروج",
     "greeting": "مرحبا,"
   },
-
   "navigation": {
     "home": "الرئيسية",
     "about": "من نحن",
@@ -113,33 +150,25 @@
     "error": "حدث خطأ",
     "success": "تم بنجاح"
   },
-  "error": {
-    "pageNotFound": "الصفحة غير موجودة",
-    "pageNotFoundDesc": "عذراً، الصفحة التي تبحث عنها غير موجودة",
-    "backHome": "العودة للرئيسية",
-    "error": "حدث خطأ",
-    "errorDesc": "عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى",
-    "tryAgain": "حاول مرة أخرى"
-  },
-  "latestPosts":{
+  "latestPosts": {
     "title": "أحدث المنشورات",
     "noPosts": "لا يوجد منشورات",
     "seeAllPosts": "عرض جميع المنشورات"
   },
-  "opportunitySquare":{
+  "opportunitySquare": {
     "title": "ساحة الفرص",
     "noOpportunities": "لا يوجد فرص",
     "seeAllOpportunities": "عرض جميع الفرص",
-    "detailsOpportunity":"عرض تفاصيل الفرصة",
+    "detailsOpportunity": "عرض تفاصيل الفرصة",
     "ended": "منتهية"
   },
-  "Companies":{
+  "Companies": {
     "title": "الشركات",
     "noCompanies": "لا يوجد شركات",
     "seeAllCompanies": "عرض جميع الشركات",
-    "detailsCompany":"عرض تفاصيل الشركة"
+    "detailsCompany": "عرض تفاصيل الشركة"
   },
-  "downloadApp":{
+  "downloadApp": {
     "title": "حمل التطبيق الآن",
     "subtitle": " قم بتحميل تطبيق منصة لينكورا",
     "downloadButton": "تحميل التطبيق",

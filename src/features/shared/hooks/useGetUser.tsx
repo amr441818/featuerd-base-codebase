@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { useLocale } from 'next-intl';
 
 export const useGetUser = () => {
+  //get data from session
   const { status, data } = useSession();
   const lang = useLocale();
 
