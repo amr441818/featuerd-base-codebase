@@ -15,7 +15,12 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['almasader.net', 'khod.almasader.net/storage', 'khod.almasader.net'],
+    domains: [
+      'almasader.net',
+      'images.unsplash.com',
+      'khod.almasader.net/storage',
+      'khod.almasader.net',
+    ],
   },
 };
 
