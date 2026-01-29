@@ -6,6 +6,8 @@ This document provides a technical overview of the shared component library and 
 
 ### Component Hierarchy
 
+![Component Hierarchy](./images/component_hierarchy.png)
+
 ```mermaid
 graph TD
     A[Container] --> B[Page Content]
@@ -37,6 +39,8 @@ graph TD
 ```
 
 ### Form Data flow (Controlled vs Standalone)
+
+![Form Data Flow](./images/form_data_flow.png)
 
 ```mermaid
 sequenceDiagram

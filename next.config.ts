@@ -14,6 +14,7 @@ const withNextIntl = createNextIntlPlugin();
 // 3. Your base Next.js config
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+   output: "standalone",
   images: {
     domains: [
       'almasader.net',
