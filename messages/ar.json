@@ -118,8 +118,216 @@
     "actualBudgetRequired": "الميزانية الفعلية مطلوبة",
     "budgetMustBePositive": "الميزانية يجب أن تكون رقم موجب"
   },
+  "auth": {
+    "SignIn": {
+      "passwordMin": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "mailRequired": "البريد الإلكتروني مطلوب",
+      "invalidMail": "صيغة البريد الإلكتروني غير صحيحة",
+      "title": "تسجيل الدخول",
+      "subtitle": "قم بإدخال بيانات حسابك لتسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "forgotPassword": "هل نسيت كلمة المرور  ؟",
+      "login": "تسجيل الدخول",
+      "sending": "جاري الإرسال...",
+      "or": "أو الدخول عن طريق",
+      "noAccount": "ليس لديك حساب بالمنصة ؟",
+      "register": "إنشاء حساب جديد",
+      "mobile": "رقم الجوال",
+      "newAccount": "حساب جديد",
+      "successMessage": "تم تسجيل الدخول بنجاح",
+      "completeProfileMessage": "يرجى إكمال ملفك الشخصي للمتابعة",
+      "mobileRequired": "رقم الجوال مطلوب"
+    },
+    "accountReview": {
+      "title": "حسابك قيد المراجعة",
+      "description": "شكرا على تسجيلك معنا كمورد سيتم مراجعة بيانات حسابك التي أدخلتها من قبل إدارة المنصة بأقرب وقت",
+      "backToHome": "حسنا , العودة إلى الرئيسية"
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "or": "أو الدخول عن طريق",
+      "subtitle": "قم بملأ بياناتك لإنشاء حساب جديد",
+      "companyTitle": "إستكمال بيانات الشركة",
+      "companySubtitle": "قم بملأ بيانات الشركة لإستكمال إنشاء حسابك",
+      "placeholdersBuyer": {
+        "name": "اسم الفرد / المؤسسة",
+        "phoneNumber": "أدخل رقم الجوال",
+        "email": "البريد الإلكتروني",
+        "idNumber": "الرقم الوظيفي (ID)",
+        "positionName": "المسمى الوظيفي",
+        "password": "كلمة المرور",
+        "passwordConfirmation": "تأكيد كلمة المرور",
+        "purposeName": "الغرض من النظام",
+        "companyName": "اسم الشركة / النظام",
+        "companyField": "اختر مجال الشركة",
+        "companySize": "اختر حجم الشركة",
+        "companyLocation": "حدد موقع الشركة"
+      },
+      "placeholdersSeller": {
+        "name": "اسم المورد / الشركة",
+        "phoneNumber": "أدخل رقم الجوال",
+        "email": "البريد الإلكتروني",
+        "idNumber": "الرقم الوظيفي (ID)",
+        "positionName": "المسمى الوظيفي",
+        "password": "كلمة المرور",
+        "passwordConfirmation": "تأكيد كلمة المرور",
+        "purposeName": "الغرض من النظام",
+        "companyName": "اسم الشركة / النظام",
+        "companyField": "اختر مجال الشركة",
+        "companySize": "اختر حجم الشركة",
+        "companyLocation": "حدد موقع الشركة",
+        "activity": "اختيار الأنشطة / التخصصات"
+      },
+      "options": {
+        "single": "فرد",
+        "company": "شركة"
+      },
+      "buttons": {
+        "next": "التالي",
+        "previous": "السابق",
+        "create": "إنشاء الحساب",
+        "login": "تسجيل الدخول"
+      },
+      "errors": {
+        "nameRequired": "الاسم مطلوب",
+        "firstNameRequired": "الاسم الأول مطلوب",
+        "lastNameRequired": "الاسم الأخير مطلوب",
+        "emailRequired": "البريد الإلكتروني مطلوب",
+        "invalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+        "mobileRequired": "رقم الجوال مطلوب",
+        "mobileInvalid": "رقم الجوال يجب أن يحتوي على أرقام فقط",
+        "passwordRequired": "كلمة المرور مطلوبة",
+        "password_min": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+        "password_uppercase": "كلمة المرور يجب أن تحتوي على حرف كبير واحد على الأقل",
+        "password_lowercase": "كلمة المرور يجب أن تحتوي على حرف صغير واحد على الأقل",
+        "password_number": "كلمة المرور يجب أن تحتوي على رقم واحد على الأقل",
+        "password_symbol": "كلمة المرور يجب أن تحتوي على رمز خاص واحد على الأقل",
+        "passwordMin": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+        "passwordConfirmationRequired": "تأكيد كلمة المرور مطلوب",
+        "passwordMismatch": "كلمتا المرور غير متطابقتين",
+        "idNumberRequired": "الرقم الوظيفي مطلوب",
+        "positionNameRequired": "المسمى الوظيفي مطلوب",
+        "purposeNameRequired": "الغرض من النظام مطلوب",
+        "companyNameRequired": "اسم الشركة مطلوب",
+        "companyFieldRequired": "مجال الشركة مطلوب",
+        "companySizeRequired": "حجم الشركة مطلوب",
+        "companyLocationRequired": "موقع الشركة مطلوب",
+        "cityRequired": "المدينة مطلوبة",
+        "activityRequired": "الانشطة / التخصصات مطلوبة "
+      },
+      "acceptTerms": {
+        "part1": "الموافقة على جميع",
+        "part2": "الشروط والأحكام",
+        "termsRequired": "يجب الموافقة على الشروط والأحكام للمتابعة"
+      },
+      "alreadyHaveAccount": "لديك حساب بالمنصة ؟ قم بتسجيل الدخول",
+      "selectAccountType": "قم باختيار نوع الحساب",
+      "buyerAccount": "حساب مشتري",
+      "sellerAccount": "حساب مورد/تاجر",
+      "buyerFormTitle": "قم بملأ بيانات حساب مشتري",
+      "sellerFormTitle": "قم بملأ بيانات حساب مورد/تاجر"
+    },
+    "FileUpload": {
+      "title": "الصورة الشخصية",
+      "subtitle": " قم بإرفاق صورة حسابك الشخصي",
+      "description": "يجب أن تكون الصورة بحجم لا يقل عن 200 بكسل × 200 بكسل بصيغة (PNG-JPG-JPEG)"
+    },
+    "CompleteRegister": {
+      "account": {
+        "title": "استكمال بيانات الحساب",
+        "subtitle": "قم بملأ جميع البيانات"
+      },
+      "company": {
+        "title": "استكمال بيانات الشركة",
+        "subtitle": "قم بملأ بيانات الشركة لاستكمال إنشاء حسابك"
+      },
+      "fields": {
+        "first_name": "الاسم الأول",
+        "last_name": "الاسم الأخير",
+        "email": "البريد الإلكتروني",
+        "single": "فرد",
+        "company": "شركة",
+        "id_number": "الرقم الوظيفي (ID)",
+        "position_name": "المسمى الوظيفي",
+        "password": "كلمة المرور",
+        "password_confirmation": "تأكيد كلمة المرور",
+        "purpose_name": "الغرض من النظام",
+        "company_name": "اسم الشركة / النظام",
+        "company_field": "اختر مجال الشركة",
+        "company_size": "اختر حجم الشركة",
+        "company_location": "حدد موقع الشركة"
+      },
+      "actions": {
+        "create": "إنشاء",
+        "next": "التالي"
+      }
+    },
+    "forgetPassword": {
+      "title": "استعادة كلمة المرور",
+      "description1": "قم بكتابة بريدك الإلكتروني لإرسال كود التحقق",
+      "description2": "لتتمكن من تعيين كلمة مرور جديدة",
+      "emailPlaceholder": "البريد الإلكتروني",
+      "submit": "أرسل كود التحقق",
+      "validations": {
+        "required": "البريد الإلكتروني مطلوب",
+        "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+      }
+    },
+    "confirmCode": {
+      "title": "التحقق",
+      "description1": "قم بإدخال كود التحقق الذي تم إرساله إليك عبر البريد الإلكتروني الذي قمت بإدخاله",
+      "submit": "تحقق",
+      "successMessage": "تم التحقق بنجاح",
+      "resendText": "لم يتم ارسال الكود إليك ؟",
+      "codeResent": "تم ارسال الكود بنجاح",
+      "resendButton": "ارسال مرة اخري",
+      "resendTimerMessage": "يمكنك طلب كود تحقق آخر بعد",
+      "validations": {
+        "min": "كود التحقق مكون من 6 أرقام",
+        "max": "كود التحقق مكون من 6 أرقام",
+        "regex": "الكود يجب أن يحتوي على أرقام فقط"
+      }
+    },
+    "ResetPassword": {
+      "title": "تعيين كلمة المرور الجديدة",
+      "subtitle": "الآن يمكنك تعيين كلمة المرور الجديدة الخاصة بحسابك",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "submit": "حفظ كلمة المرور",
+      "imageAlt": "أيقونة تغيير كلمة المرور"
+    },
+    "FormResetPassword": {
+      "title": "كلمة المرور الجديدة",
+      "description": "يمكنك الآن تعيين كلمة المرور الجديدة الخاصة بك",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "submit": "تعيين",
+      "errors": {
+        "passwordMin": "كلمة المرور يجب أن تكون على الأقل 6 أحرف",
+        "confirmPasswordMin": "تأكيد كلمة المرور يجب أن يكون على الأقل 6 أحرف",
+        "confirmPasswordMatch": "تأكيد كلمة المرور يجب أن يطابق كلمة المرور"
+      }
+    },
+    "changePassword": {
+      "title": "تغيير كلمة المرور",
+      "subtitle": "يمكنك تغيير كلمة مرور حسابك بسهولة",
+      "currentPassword": "كلمة المرور الحالية",
+      "password": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور الجديدة",
+      "submit": "حفظ كلمة المرور الجديدة",
+      "forgotPassword": "هل نسيت كلمة المرور ؟",
+      "errors": {
+        "currentPassword": "كلمة المرور الحالية",
+        "passwordMin": "كلمة المرور يجب أن تكون على الأقل 6 أحرف",
+        "confirmPasswordMin": "تأكيد كلمة المرور يجب أن يكون على الأقل 6 أحرف",
+        "confirmPasswordMatch": "تأكيد كلمة المرور يجب أن يطابق كلمة المرور"
+      }
+    }
+  },
   "navbarFooter": {
-    "title": "روابط سريعة",
+    "title": "روابط سريعة : ",
     "home": "الرئيسية",
     "about": "عن المنصة",
     "latestPosts": "أحدث المنشورات",

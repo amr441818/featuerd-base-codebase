@@ -3,10 +3,11 @@
 import { useEffect, useState } from 'react';
 
 import { Icon } from '@iconify/react';
+import { FieldValues } from 'react-hook-form';
 
 import { CustomInputProps } from '../../types/formInputs';
 
-const CustomInput = (props: CustomInputProps) => {
+const CustomInput = <TFieldValues extends FieldValues>(props: CustomInputProps<TFieldValues>) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -14,14 +15,14 @@ const CustomInput = (props: CustomInputProps) => {
   }, []);
 
   return (
-    <div className='relative flex flex-col gap-2'>
+    <div className='relative flex w-full flex-col gap-2'>
       <input
         type={show ? 'text' : props.type}
         placeholder={props.placeholder}
         {...props.register(props.name, props?.validation)}
         required={props.required ? props.required : false}
         disabled={props.disabled ? props.disabled : false}
-        className={`focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-[10px] border border-[#EBEBEB] bg-white p-4 text-sm text-gray-900 outline-none dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 md:ps-[25px] ${props.className ? props.className : ''} ${props.error ? 'border-red-500' : ''}`}
+        className={`mx-auto block h-[45px] w-full max-w-full rounded-[25px] border border-[#000000]/[15%] bg-white p-3 ps-[15px] text-xs text-gray-900 outline-none placeholder:text-[10px] placeholder:font-light placeholder:text-muted focus:border-primary focus:ring-primary dark:focus:border-primary dark:focus:ring-primary md:h-[50px] md:max-w-[315px] md:rounded-[35px] md:p-4 md:ps-[25px] md:text-sm md:placeholder:text-xs lg:h-[64px] ${props.className ? props.className : ''} ${props.error ? 'border-red-500' : ''}`}
       />
 
       {props?.type === 'password' && (
@@ -41,7 +42,7 @@ const CustomInput = (props: CustomInputProps) => {
           )}
         </>
       )}
-      {props.error && <p className='text-start text-red-500'>{props.error}</p>}
+      {props.error && <p className='text-center text-sm font-light text-red-500'>{props.error}</p>}
     </div>
   );
 };

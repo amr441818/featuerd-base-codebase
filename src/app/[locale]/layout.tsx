@@ -4,10 +4,19 @@ import { Inter } from 'next/font/google';
 import Providers from '@/providers/providers';
 import { NextIntlClientProvider } from 'next-intl';
 
-import myCustomFont from '../../../public/fonts/MyCustomFont';
+import LayoutWrapper from '@/features/shared/components/WrapperLayout';
+
+import Footer from '@/components/layout/footer/Footer';
+import Navbar from '@/components/layout/navbar/Navbar';
+
+import montserratArabic from '../../../public/fonts/montserrat-arabic';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Next.js Feature-Based App',
@@ -39,9 +48,16 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body className={locale === 'ar' ? myCustomFont.className : inter.className}>
+      <body className={locale === 'ar' ? montserratArabic.className : inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Providers locale={locale}>{children}</Providers>
+          <Providers locale={locale}>
+            <Navbar />
+            <LayoutWrapper>
+              {children}
+
+              <Footer />
+            </LayoutWrapper>
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

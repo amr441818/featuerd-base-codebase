@@ -103,7 +103,7 @@ export type CustomInputProps<TFieldValues extends FieldValues = FieldValues> = {
   validation?: RegisterOptions<TFieldValues, Path<TFieldValues>>;
   type: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'date';
   placeholder: string;
-  name: string;
+  name: Path<TFieldValues>;
   error?: string;
   className?: string;
   required?: boolean;
@@ -174,3 +174,38 @@ export interface ExampleFormData {
 
 // You can then use it like this in your components:
 // type SpecificCustomInputProps = CustomInputProps<ExampleFormData>;
+
+type BaseField = {
+  name: string;
+  label?: string;
+  placeholder?: string;
+  colSpan?: 1 | 2;
+  inputClassName?: string;
+  wrapperClassName?: string;
+};
+
+type InputField = BaseField & {
+  fieldType: 'input';
+  type: 'text' | 'email' | 'password' | 'number';
+  className?: string;
+  required?: boolean;
+  disabled?: boolean;
+};
+
+type TextAreaField = BaseField & {
+  fieldType: 'textarea';
+  rows?: number;
+  className?: string;
+  required?: boolean;
+  disabled?: boolean;
+};
+
+type SelectField = BaseField & {
+  fieldType: 'select';
+  options: OptionType[];
+  className?: string;
+  required?: boolean;
+  disabled?: boolean;
+};
+
+export type FormField = InputField | TextAreaField | SelectField;

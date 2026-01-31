@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { Menu } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import Socials from './Socials';
 
@@ -12,6 +13,8 @@ function AsideMenu({
   open,
   setOpen,
   menuItems,
+  iconColor = 'black',
+  token,
 }: {
   lang: string;
   iconColor?: string;
@@ -19,7 +22,9 @@ function AsideMenu({
   register?: unknown;
   setOpen: (open: boolean) => void;
   menuItems: Record<string, string>[];
+  token?: string;
 }) {
+  const t = useTranslations('navbarFooter');
   return (
     <>
       <div className='cursor-pointer lg:hidden' onClick={() => setOpen(!open)}>
@@ -30,7 +35,7 @@ function AsideMenu({
             height={24}
             alt="currency"
           /> */}
-        <Menu color='#fff' size={24} />
+        <Menu color={iconColor === 'black' ? '#00344B' : '#fff'} size={24} />
       </div>
       {/* aside*/}
       <div
@@ -82,6 +87,41 @@ function AsideMenu({
                 </Link>
               </li>
             ))}
+
+            {/* Login Buttons - Only show when not logged in */}
+            {!token && (
+              <>
+                <li
+                  className={`${lang === 'ar' ? 'translate-x-[100%]' : 'translate-x-[-100%]'} ${
+                    open ? '!translate-x-0' : ''
+                  } mt-4 w-full transition-transform duration-500`}
+                  style={{ transitionDuration: `${300 * (menuItems.length + 1)}ms` }}
+                >
+                  <Link
+                    href={`/${lang}/login`}
+                    onClick={() => setOpen(false)}
+                    className='block w-full rounded-[35px] bg-primary px-[25px] py-[10px] text-center !text-white transition-colors duration-300 hover:bg-secondary'
+                  >
+                    {t('login')}
+                  </Link>
+                </li>
+                <li
+                  className={`${lang === 'ar' ? 'translate-x-[100%]' : 'translate-x-[-100%]'} ${
+                    open ? '!translate-x-0' : ''
+                  } w-full transition-transform duration-500`}
+                  style={{ transitionDuration: `${300 * (menuItems.length + 2)}ms` }}
+                >
+                  <Link
+                    href={`/${lang}/register`}
+                    onClick={() => setOpen(false)}
+                    className='block w-full rounded-[35px] border border-secondary bg-white px-[25px] py-[10px] text-center text-secondary transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white'
+                  >
+                    {t('newAccount')}
+                  </Link>
+                </li>
+              </>
+            )}
+
             {/* <MainLink
                     href="login"
                     onClick={() => setOpen(false)}

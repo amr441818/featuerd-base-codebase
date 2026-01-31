@@ -20,7 +20,7 @@ const CustomTextAria = (props: any) => {
         {...props.register(props.name)}
         placeholder={props?.placeholder}
         required={props.required ? props.required : false}
-        className='focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-[25px] border border-gray-300 bg-white p-2.5 text-sm text-gray-900 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400'
+        className='block w-full resize-none rounded-[12px] border border-[#000000]/[15%] bg-white p-3 ps-[15px] text-xs text-gray-900 outline-none placeholder:text-[10px] placeholder:font-light placeholder:text-muted focus:border-primary focus:ring-primary dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary dark:focus:ring-primary md:rounded-[15px] md:p-4 md:ps-[25px] md:text-sm md:placeholder:text-xs'
       />
     </div>
   );

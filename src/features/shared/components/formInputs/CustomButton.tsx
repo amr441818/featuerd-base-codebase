@@ -1,80 +1,47 @@
-import * as React from 'react';
+'use client';
 
-import { Slot } from '@radix-ui/react-slot';
-import { type VariantProps, cva } from 'class-variance-authority';
+import React, { ReactNode } from 'react';
 
-import { cn } from '@/lib/utils';
+import { Loader } from 'lucide-react';
 
-const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-1 rounded-[10px] font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-70',
-  {
-    variants: {
-      variant: {
-        default: 'bg-gradient-90 text-white',
-        secondary: 'bg-secondary text-secondary-foreground',
-        outline: 'border border-input bg-background',
-        destructive: 'bg-destructive text-destructive-foreground',
-      },
-      size: {
-        default: 'px-[50px] py-3 text-[22px]',
-        sm: 'px-4 py-2 text-sm',
-        lg: 'px-8 py-4 text-lg',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
-  },
-);
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+type CustomButtonProps = {
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
   loading?: boolean;
-  icon?: React.ReactNode;
-}
+  disabled?: boolean;
+  icon?: ReactNode;
+  type?: 'submit' | 'button' | 'reset';
+  bgLight?: boolean;
+  bgColor?: string | undefined;
+};
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      asChild = false,
-      loading = false,
-      disabled,
-      icon,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : 'button';
-    const isDisabled = disabled || loading;
+const CustomButton = (props: CustomButtonProps) => {
+  return (
+    <button
+      type={props.type ? props.type : 'submit'}
+      disabled={props?.disabled}
+      onClick={() => props.onClick && props.onClick()}
+      className={` ${
+        props.bgColor
+          ? `text-white ${props.bgColor}`
+          : props.bgLight
+            ? 'bg-neutral text-secondary'
+            : 'bg-primary text-white'
+      } flex h-[45px] w-full max-w-[315px] items-center justify-center rounded-[25px] p-[10px] text-center text-[12px] font-normal disabled:cursor-not-allowed disabled:bg-[#00000014] disabled:bg-none disabled:text-muted md:h-[50px] md:rounded-[35px] md:text-[13px] lg:h-[65px] lg:text-[14px] ${props.className || ''} transition-all duration-300 hover:bg-neutral hover:!text-white`}
+    >
+      {props.loading ? (
+        <span className='sub-loader flex w-full items-center justify-center !border-white !border-b-transparent'>
+          <Loader className='animate-spin' />
+        </span>
+      ) : (
+        <div className='flex items-center justify-center gap-2'>
+          {props.icon && props.icon}
+          {props.children}
+        </div>
+      )}
+    </button>
+  );
+};
 
-    return (
-      <Comp
-        ref={ref}
-        disabled={isDisabled}
-        aria-busy={loading}
-        className={cn(buttonVariants({ variant, size }), className)}
-        {...props}
-      >
-        {loading ? (
-          <span className='sub-loader !border-white !border-b-transparent' />
-        ) : (
-          <>
-            {icon}
-            {children}
-          </>
-        )}
-      </Comp>
-    );
-  },
-);
-
-Button.displayName = 'Button';
-
-export { Button, buttonVariants };
+export default CustomButton;

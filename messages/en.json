@@ -58,6 +58,214 @@
     "cancel": "Cancel",
     "success": "Logged out successfully"
   },
+  "auth": {
+    "SignIn": {
+      "passwordMin": "Password must be at least 6 characters",
+      "passwordRequired": "Password is required",
+      "mailRequired": "Email is required",
+      "invalidMail": "Invalid email format",
+      "title": "Sign In",
+      "subtitle": "Fill in your account details to log in",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot your password?",
+      "login": "Sign In",
+      "sending": "Sending...",
+      "or": "Or sign in with:",
+      "noAccount": "Don’t have an account?",
+      "register": "Create a new account",
+      "mobile": "Mobile",
+      "newAccount": "New account",
+      "successMessage": "Signed in successfully",
+      "completeProfileMessage": "Please complete your profile to continue",
+      "mobileRequired": "Mobile is required"
+    },
+    "accountReview": {
+      "title": "Your account is under review",
+      "description": "Thank you for registering with us as a supplier. Your account details will be reviewed by the platform administration as soon as possible.",
+      "backToHome": "OK, Back to Home"
+    },
+    "register": {
+      "title": "Create New Account",
+      "subtitle": "Fill in your details to create a new account",
+      "companyTitle": "Complete Company Information",
+      "companySubtitle": "Fill in your company details to complete registration",
+      "placeholdersBuyer": {
+        "name": "Name",
+        "phoneNumber": "Enter Mobile Number",
+        "email": "Email",
+        "or": "Or sign in with:",
+        "idNumber": "Employee ID",
+        "positionName": "Job Title",
+        "password": "Password",
+        "passwordConfirmation": "Confirm Password",
+        "purposeName": "System Purpose",
+        "companyName": "Company / System Name",
+        "companyField": "Select Company Field",
+        "companySize": "Select Company Size",
+        "companyLocation": "Select Company Location"
+      },
+      "placeholdersSeller": {
+        "name": "Supplier / Company Name",
+        "phoneNumber": "Enter Mobile Number",
+        "email": "Email",
+        "or": "Or sign in with:",
+        "idNumber": "Employee ID",
+        "positionName": "Job Title",
+        "password": "Password",
+        "passwordConfirmation": "Confirm Password",
+        "purposeName": "System Purpose",
+        "companyName": "Company / System Name",
+        "companyField": "Select Company Field",
+        "companySize": "Select Company Size",
+        "companyLocation": "Select Company Location",
+        "activity": "Select Activities"
+      },
+      "options": {
+        "single": "Individual",
+        "company": "Company"
+      },
+      "buttons": {
+        "next": "Next",
+        "previous": "Previous",
+        "create": "Create Account",
+        "login": "Login"
+      },
+      "errors": {
+        "nameRequired": "Name is required",
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailRequired": "Email is required",
+        "invalidEmail": "Invalid email format",
+        "mobileRequired": "Mobile number is required",
+        "mobileInvalid": "Mobile number must contain only digits",
+        "passwordRequired": "Password is required",
+        "password_min": "Password must be at least 8 characters",
+        "password_uppercase": "Password must contain at least one uppercase letter",
+        "password_lowercase": "Password must contain at least one lowercase letter",
+        "password_number": "Password must contain at least one number",
+        "password_symbol": "Password must contain at least one special character",
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordConfirmationRequired": "Password confirmation is required",
+        "passwordMismatch": "Passwords do not match",
+        "idNumberRequired": "Employee ID is required",
+        "positionNameRequired": "Job title is required",
+        "purposeNameRequired": "System purpose is required",
+        "companyNameRequired": "Company name is required",
+        "companyFieldRequired": "Company field is required",
+        "companySizeRequired": "Company size is required",
+        "companyLocationRequired": "Company location is required",
+        "cityRequired": "City is required",
+        "activityRequired": "Activity is required"
+      },
+      "acceptTerms": {
+        "part1": "I agree to all",
+        "part2": "terms and conditions",
+        "termsRequired": "You must agree to the terms and conditions to continue"
+      },
+      "alreadyHaveAccount": "Already have an account? Login",
+      "selectAccountType": "Select Account Type",
+      "buyerAccount": "Buyer",
+      "sellerAccount": "Supplier/Seller",
+      "buyerFormTitle": "Fill in Buyer Account Details",
+      "sellerFormTitle": "Fill in Supplier/Seller Account Details"
+    },
+    "CompleteRegister": {
+      "account": {
+        "title": "Complete Account Information",
+        "subtitle": "Please fill in all required details"
+      },
+      "company": {
+        "title": "Complete Company Information",
+        "subtitle": "Fill in your company details to complete account creation"
+      },
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "single": "Individual",
+        "company": "Company",
+        "id_number": "Employee ID",
+        "position_name": "Job Title",
+        "password": "Password",
+        "password_confirmation": "Confirm Password",
+        "purpose_name": "Purpose of the System",
+        "company_name": "Company / System Name",
+        "company_field": "Select Company Field",
+        "company_size": "Select Company Size",
+        "company_location": "Select Company Location"
+      },
+      "actions": {
+        "create": "Create",
+        "next": "Next"
+      }
+    },
+    "FileUpload": {
+      "title": "Profile Picture",
+      "subtitle": "Attach your personal account photo",
+      "description": "The image must be at least 200 × 200 pixels in size and in (PNG, JPG, or JPEG) format."
+    },
+    "forgetPassword": {
+      "title": "Reset Password",
+      "description1": "Enter your email address to receive a verification code",
+      "description2": "So you can set a new password",
+      "emailPlaceholder": "Email Address",
+      "submit": "Send Verification Code",
+      "validations": {
+        "required": "Email is required",
+        "invalid": "Invalid email format"
+      }
+    },
+    "confirmCode": {
+      "title": "Verification",
+      "description1": "Enter the verification code that was sent to your email",
+      "submit": "Verify",
+      "resendText": "Didn't receive the code?",
+      "successMessage": "Verified successfully",
+      "codeResent": "Code sent successfully",
+      "resendButton": "Resend code",
+      "resendTimerMessage": "You can request another code after",
+      "validations": {
+        "min": "The verification code must be 6 digits",
+        "max": "The verification code must be 6 digits",
+        "regex": "The code must contain numbers only"
+      }
+    },
+    "ResetPassword": {
+      "title": "Set New Password",
+      "subtitle": "You can now set a new password for your account",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Save Password",
+      "imageAlt": "Reset password icon"
+    },
+    "FormResetPassword": {
+      "title": "Set New Password",
+      "description": "You can now set a new password for your account",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Submit",
+      "errors": {
+        "passwordMin": "Password must be at least 6 characters",
+        "confirmPasswordMin": "Confirm password must be at least 6 characters",
+        "confirmPasswordMatch": "Confirm password must match the password"
+      }
+    },
+    "changePassword": {
+      "title": "Change Password",
+      "subtitle": "You can easily change your account password",
+      "currentPassword": "Current Password",
+      "password": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Save New Password",
+      "forgotPassword": "Forgot your password?",
+      "errors": {
+        "currentPassword": "Current password is required",
+        "passwordMin": "Password must be at least 6 characters",
+        "confirmPasswordMin": "Confirm password must be at least 6 characters",
+        "confirmPasswordMatch": "Confirm password must match the password"
+      }
+    }
+  },
   "deleteAccount": {
     "title": "Delete Account",
     "confirmation": "If you are sure you want to permanently delete your account and all associated data, please provide a reason for deletion.",

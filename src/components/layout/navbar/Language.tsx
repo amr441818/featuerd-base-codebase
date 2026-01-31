@@ -32,7 +32,10 @@ const Language = ({ isMobile }: { isMobile?: boolean }) => {
 
   return (
     <>
-      <div className={`flex cursor-pointer items-center justify-center`} onClick={toggleLanguage}>
+      <div
+        className={`mx-1 flex cursor-pointer items-center justify-center`}
+        onClick={toggleLanguage}
+      >
         <button className='flex items-center justify-between gap-2'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

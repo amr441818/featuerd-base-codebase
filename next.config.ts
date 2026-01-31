@@ -15,7 +15,17 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['almasader.net', 'khod.almasader.net/storage', 'khod.almasader.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'almasader.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'khod.almasader.net',
+        pathname: '/storage/**',
+      },
+    ],
   },
 };
 

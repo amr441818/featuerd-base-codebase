@@ -1,23 +1,23 @@
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+
+import { useLocale, useTranslations } from 'next-intl';
 
 const LoginButtons = () => {
-  const t = useTranslations("navbarFooter");
+  const t = useTranslations('navbarFooter');
   const locale = useLocale();
   return (
-    <div className="shrink-0 flex flex-col sm:flex-row items-center gap-[10px]">
+    <div className='xs:gap-2 flex flex-row items-center gap-1.5 sm:gap-2.5 md:gap-3 lg:gap-[10px]'>
       <Link
         href={`/${locale}/login`}
-        className="border-[1px] border-[#fff]/[0.47] rounded-[19px] w-[85px] sm:w-[100px] md:w-[120px] xl:w-[140px] 2xl:w-[160px] h-[36px] md:h-[55px] text-[#fff] text-[10px] md:text-[14px] md:font-bold flex items-center justify-center hover:bg-[#fff] hover:text-[#0F7644] transition-colors duration-300"
+        className='flex h-[40px] items-center justify-center whitespace-nowrap rounded-[35px] bg-primary px-[25px] py-[8px] text-[12px] font-[400] text-white transition-colors duration-300 hover:bg-secondary'
       >
-        {t("login")}
+        {t('login')}
       </Link>
       <Link
         href={`/${locale}/register`}
-        className="border-[1px] border-[#fff]/[0.47] rounded-[19px] w-[85px] sm:w-[100px] md:w-[120px] xl:w-[140px] 2xl:w-[160px] h-[36px] md:h-[55px] text-[#fff] text-[10px] md:text-[14px] md:font-bold flex items-center justify-center hover:bg-[#fff] hover:text-[#0F7644] transition-colors duration-300"
+        className='flex h-[40px] items-center justify-center whitespace-nowrap rounded-[35px] border border-secondary bg-white px-[25px] py-[8px] text-[12px] font-[400] text-secondary transition-colors duration-300 hover:border-white hover:bg-primary hover:text-white'
       >
-        {t("newAccount")}
+        {t('newAccount')}
       </Link>
     </div>
   );
