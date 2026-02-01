@@ -12,7 +12,7 @@ interface EmptyStateProps {
   className?: string;
 }
 
-const EmptyState: React.FC<EmptyStateProps> = ({
+export const EmptyState: React.FC<EmptyStateProps> = ({
   imageSrc,
   StateIcon,
   title,

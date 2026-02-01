@@ -30,7 +30,7 @@ export const works: Artwork[] = [
   },
 ];
 
-export default function HorizonalScrollare() {
+export function HorizonalScrollare() {
   return (
     <div
       className='flex w-full justify-center self-start pt-6'

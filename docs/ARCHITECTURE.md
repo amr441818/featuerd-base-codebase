@@ -22,20 +22,17 @@ graph TD
     C2 --> C5[FormSelect]
     C2 --> C6[FormCheckbox]
     C2 --> C7[FormSwitch]
+    C2 --> C8[FormDatePicker]
+    C2 --> C9[FormMultiSelect]
 
-    B --> F[Advanced Inputs]
-    F --> F1[MultiSelect]
-    F --> F2[DatePickerField]
-    F --> F3[CustomSelectWithStatus]
-    F --> F4[CustomMeetingSelect]
-    F --> F5[CustomSearch]
+    B --> F[Base UI Components]
+    F --> F1[CustomButton]
+    F --> F2[AvatarGroup]
+    F --> F3[EmptyState]
 
     D --> D1[CustomTabs]
-    D --> D2[ScrollAreaHorizontal]
+    D --> D2[HorizonalScrollare]
     D --> D3[CustomModal]
-
-    E --> E1[EmptyState]
-    E --> E2[AvatarGroup]
 ```
 
 ### Form Data flow (Controlled vs Standalone)
@@ -45,8 +42,8 @@ graph TD
 ```mermaid
 sequenceDiagram
     participant User
-    participant Comp as Controlled Component (e.g. MultiSelect)
-    participant Reg as Registered Component (e.g. CustomSearch)
+    participant Comp as Controlled Component (e.g. FormMultiSelect)
+    participant Reg as Native Input (e.g. FormInput)
     participant RHF as React Hook Form
     participant Schema as Zod Validator
 
@@ -57,26 +54,38 @@ sequenceDiagram
     Schema-->>RHF: Errors (if any)
     RHF-->>Comp: Update fieldState
 
-    Note over User,Schema: Standalone/Registered Interaction
+    Note over User,Schema: Form Wrapper Interaction
     User->>Reg: Typing
-    Reg->>RHF: native onChange event
-    RHF->>Schema: Validate on Blur/Submit
+    Reg->>RHF: controller onChange event
+    RHF->>Schema: Validate on Change/Blur/Submit
 ```
 
 ## Component Mapping Reference
 
-| Component Type     | File Path                    | Usage Pattern                            |
-| :----------------- | :--------------------------- | :--------------------------------------- |
-| **Form Layout**    | `SchemaForm.tsx`             | Schema-driven dynamic rendering          |
-| **Standard Input** | `FormInput.tsx`              | `register` or `control` wrapper for text |
-| **Rich Select**    | `MultiSelect.tsx`            | `control` - for multi-item selection     |
-| **Status Select**  | `CustomSelectWithStatus.tsx` | `control` - with visual color indicators |
-| **Date Selection** | `DatePiker.tsx`              | `control` - Popover calendar integration |
-| **Navigation**     | `CustomTabs.tsx`             | Standalone state-driven tabs             |
-| **Layout Wrapper** | `container/index.tsx`        | Max-width consistent layout              |
+| Component Type     | File Path (in `forms/`) | Usage Pattern                             |
+| :----------------- | :---------------------- | :---------------------------------------- |
+| **Form Layout**    | `SchemaForm.tsx`        | Schema-driven dynamic rendering           |
+| **Standard Input** | `FormInput.tsx`         | `control` managed input                   |
+| **Rich Select**    | `FormMultiSelect.tsx`   | `control` - for multi-item selection      |
+| **Date Selection** | `FormDatePicker.tsx`    | `control` - Popover calendar integration  |
+| **Button**         | `CustomButton.tsx`      | Specialized button with gradient/loading  |
+| **Navigation**     | `CustomTabs.tsx`        | Standalone state-driven tabs (parent dir) |
+| **Layout Wrapper** | `container/index.tsx`   | Max-width consistent layout               |
+
+## Design System & Theme
+
+The application uses CSS variables for theming, enabling consistent styling across components.
+
+| Variable       | Role       | Description                                           |
+| :------------- | :--------- | :---------------------------------------------------- |
+| `--primary`    | Main Brand | Used for primary buttons, nav highlights (Blue/Green) |
+| `--secondary`  | Action/Alt | Used for secondary actions (Teal)                     |
+| `--tertiary`   | Dark Alt   | Used for deep backgrounds/headers                     |
+| `--background` | Base BG    | Main application background (Light Gray/White)        |
 
 ## Verification Results
 
-- All components verified for accessibility and RTL compatibility where applicable.
-- Zod resolver integration confirmed working for both simple and nested (FieldArray) state.
-- Modal and Scroll components verified for portal and hydration safety.
+- All legacy standalone inputs (`CustomSearch`, `CustomInput` etc) have been consolidated into the `Form*` prefix wrappers.
+- `FormFieldRenderer` updated to support all field types including `date` and `multi-select`.
+- Global CSS simplified to use standardized Tailwind theme variables.
+- Navbar and Footer updated to consume these variables for better maintainability.

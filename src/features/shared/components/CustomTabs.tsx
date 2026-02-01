@@ -17,7 +17,7 @@ interface CustomTabsProps {
   activeStyles?: string;
 }
 
-const CustomTabs: React.FC<CustomTabsProps> = ({
+export const CustomTabs: React.FC<CustomTabsProps> = ({
   tabs,
   activeStyles,
   disabeldStyles,

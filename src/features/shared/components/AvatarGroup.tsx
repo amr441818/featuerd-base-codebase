@@ -14,7 +14,7 @@ interface AvatarGroupProps {
   grayscale?: boolean; // optional — toggle grayscale filter
 }
 
-export default function AvatarGroup({ avatars, rtl = false, grayscale = true }: AvatarGroupProps) {
+export function AvatarGroup({ avatars, rtl = false, grayscale = true }: AvatarGroupProps) {
   return (
     <div
       dir={rtl ? 'rtl' : 'ltr'}

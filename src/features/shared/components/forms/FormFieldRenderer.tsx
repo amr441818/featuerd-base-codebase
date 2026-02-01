@@ -4,7 +4,11 @@ import { useFormContext, useWatch } from 'react-hook-form';
 
 import {
   FormCheckbox,
+  FormDatePicker,
+  // FormDatePicker,
   FormInput,
+  FormMultiSelect,
+  // FormMultiSelect,
   FormSelect,
   FormSwitch,
   FormTextarea,
@@ -44,7 +48,12 @@ export function FormFieldRenderer({ field }: { field: FieldConfig }) {
         <FormSelect
           name={field.name}
           label={field.label}
-          options={field.options ?? []}
+          options={
+            field.options?.map((opt) => ({
+              label: opt.label,
+              value: opt.value ?? opt.id ?? '',
+            })) ?? []
+          }
           placeholder={field.placeholder}
         />
       );
@@ -54,6 +63,34 @@ export function FormFieldRenderer({ field }: { field: FieldConfig }) {
 
     case 'switch':
       return <FormSwitch name={field.name} label={field.label} />;
+
+    case 'date':
+      return (
+        <FormDatePicker
+          name={field.name}
+          label={field.label}
+          control={control}
+          placeholder={field.placeholder}
+          disabled={field.disabled}
+        />
+      );
+
+    case 'multi-select':
+      return (
+        <FormMultiSelect
+          name={field.name}
+          label={field.label}
+          control={control}
+          options={
+            field.options?.map((opt) => ({
+              ...opt,
+              id: opt.id ?? opt.value ?? '',
+            })) ?? []
+          }
+          placeholder={field.placeholder}
+          className={field.className}
+        />
+      );
 
     default:
       return null;

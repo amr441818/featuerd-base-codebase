@@ -6,27 +6,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
-import AvatarGroup from '@/features/shared/components/AvatarGroup';
-import CustomModal from '@/features/shared/components/CustomModal';
-import CustomTabs from '@/features/shared/components/CustomTabs';
-import EmptyState from '@/features/shared/components/EmptyState';
-import ScrollAreaHorizontalDemo from '@/features/shared/components/HorizonalScrollare';
-import { Container } from '@/features/shared/components/container';
-import { Button } from '@/features/shared/components/formInputs/CustomButton';
-import CustomCheckBox from '@/features/shared/components/formInputs/CustomCheckBox';
-import CustomInput from '@/features/shared/components/formInputs/CustomInput';
-import Customsearch from '@/features/shared/components/formInputs/CustomSearch';
-import CustomSelect from '@/features/shared/components/formInputs/CustomSelect';
-import CustomSelectWithStatus from '@/features/shared/components/formInputs/CustomSelectWithStatus';
-import CustomTextAria from '@/features/shared/components/formInputs/CustomTextAria';
-import { DatePickerField } from '@/features/shared/components/formInputs/DatePiker';
-import { MultiSelect } from '@/features/shared/components/formInputs/MultiSelect';
-import CustomMeetingSelect from '@/features/shared/components/formInputs/customMeetingSelect';
-import { FormSubmit } from '@/features/shared/components/forms';
-import { FormFieldArray } from '@/features/shared/components/forms/FormFieldArray';
-import { FormInput } from '@/features/shared/components/forms/FormInput';
-import { SchemaForm } from '@/features/shared/components/forms/SchemaForm';
-import { FieldConfig } from '@/features/shared/components/forms/types';
+import {
+  AvatarGroup,
+  Button,
+  Container,
+  CustomModal,
+  CustomTabs,
+  EmptyState,
+  FieldConfig,
+  FormFieldArray,
+  FormInput,
+  FormSubmit,
+  HorizonalScrollare,
+  SchemaForm,
+} from '@/features/shared';
 
 import { Card } from '@/components/ui/card/index';
 
@@ -52,13 +45,6 @@ const formSchema = z.object({
     .min(1, 'At least one step is required'),
   dueDate: z.string().optional(),
   tags: z.array(z.string()).optional(),
-  search: z.string().optional(),
-  status: z.string().optional(),
-  meetingType: z.string().optional(),
-  password: z.string().min(8, 'Password must be at least 8 characters.').optional(),
-  agree: z.boolean().optional(),
-  rawSelect: z.string().optional(),
-  rawNotes: z.string().optional(),
 });
 type FormValues = z.infer<typeof formSchema>;
 
@@ -76,22 +62,15 @@ const Page = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: '',
-      description: '',
-      severity: 'low',
-      type: '',
+      title: 'Sample Task',
+      description: 'This is a sample task description.',
+      severity: 'medium',
+      type: 'feature',
       active: true,
-      notifications: false,
-      steps: [{ text: '' }],
+      notifications: true,
+      steps: [{ text: 'Step 1' }, { text: 'Step 2' }],
       dueDate: new Date().toISOString(),
-      tags: [],
-      search: '',
-      status: 'pending',
-      meetingType: 'online',
-      password: '',
-      agree: false,
-      rawSelect: '',
-      rawNotes: '',
+      tags: ['1', '2'],
     },
   });
   const fields: FieldConfig[] = [
@@ -139,6 +118,21 @@ const Page = () => {
       name: 'notifications',
       label: 'Enable Notifications',
       type: 'checkbox',
+    },
+    {
+      name: 'dueDate',
+      label: 'Deadline (Schema)',
+      type: 'date',
+    },
+    {
+      name: 'tags',
+      label: 'Tags (Schema Multi-Select)',
+      type: 'multi-select',
+      options: [
+        { id: '1', label: 'React' },
+        { id: '2', label: 'Next.js' },
+        { id: '3', label: 'Tailwind' },
+      ],
     },
   ];
 
@@ -231,138 +225,7 @@ const Page = () => {
       <section className='flex flex-col gap-6'>
         <h2 className='text-2xl font-bold'>Horizontal Scroll Showcase</h2>
         <Card className='p-6'>
-          <ScrollAreaHorizontalDemo />
-        </Card>
-      </section>
-
-      <section className='flex flex-col gap-6'>
-        <h2 className='text-2xl font-bold'>Advanced Custom Inputs</h2>
-        <Card className='space-y-8 border bg-white p-8 shadow-sm'>
-          <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
-            <div className='space-y-4'>
-              <h3 className='border-b pb-2 text-lg font-semibold'>Controlled Custom Components</h3>
-
-              <DatePickerField
-                name='dueDate'
-                control={form.control}
-                label='Date Picker Field'
-                placeholder='Pick a deadline'
-              />
-
-              <div className='space-y-2'>
-                <label className='text-sm font-medium'>Multi Select</label>
-                <MultiSelect
-                  name='tags'
-                  control={form.control}
-                  placeholder='Select multiple tags'
-                  options={[
-                    { id: '1', label: 'React' },
-                    { id: '2', label: 'Next.js' },
-                    { id: '3', label: 'Tailwind' },
-                    { id: '4', label: 'TypeScript' },
-                  ]}
-                  showSelectedItems={true}
-                />
-              </div>
-            </div>
-
-            <div className='space-y-4'>
-              <h3 className='border-b pb-2 text-lg font-semibold'>Standalone / Register Inputs</h3>
-
-              <div className='space-y-2'>
-                <label className='text-sm font-medium'>Custom Search Input</label>
-                <Customsearch
-                  register={form.register as any}
-                  name='search'
-                  placeholder='Search resources...'
-                />
-              </div>
-
-              <div className='space-y-2'>
-                <label className='text-sm font-medium'>Status Select (with Indicators)</label>
-                <CustomSelectWithStatus
-                  name='status'
-                  control={form.control}
-                  options={[
-                    { value: 'pending', label: 'Pending Review' },
-                    { value: 'approved', label: 'Approved' },
-                    { value: 'rejected', label: 'Rejected' },
-                  ]}
-                  statusConfig={{
-                    pending: { label: 'Waiting', color: 'yellow' },
-                    approved: { label: 'Done', color: 'green' },
-                    rejected: { label: 'Failed', color: 'red' },
-                  }}
-                  isRtl={false}
-                />
-              </div>
-
-              <div className='space-y-2'>
-                <label className='text-sm font-medium'>Meeting Type Select</label>
-                <CustomMeetingSelect
-                  name='meetingType'
-                  control={form.control}
-                  options={[
-                    { value: 'online', label: 'Online Meeting' },
-                    { value: 'in-person', label: 'In-Person' },
-                  ]}
-                  placeholder='Select meeting type'
-                />
-              </div>
-
-              <div className='space-y-4 border-t pt-4'>
-                <h3 className='text-md font-bold'>
-                  Standard &quot;Custom&quot; Components (Register Pattern)
-                </h3>
-
-                <div className='space-y-2'>
-                  <label className='text-sm font-medium'>Password Field</label>
-                  <CustomInput
-                    name='password'
-                    type='password'
-                    placeholder='Password (with visibility toggle)'
-                    register={form.register as any}
-                    error={form.formState.errors.password?.message}
-                  />
-                </div>
-
-                <CustomCheckBox
-                  name='agree'
-                  control={form.control}
-                  text='I agree to the terms and conditions'
-                />
-
-                <CustomSelect
-                  name='rawSelect'
-                  control={form.control}
-                  label='Standalone Custom Select'
-                  options={[
-                    { value: 'opt1', label: 'Option 1' },
-                    { value: 'opt2', label: 'Option 2' },
-                  ]}
-                  placeholder='Select an option'
-                />
-
-                <CustomTextAria
-                  name='rawNotes'
-                  label='Custom Text Area'
-                  register={form.register as any}
-                  placeholder='Add any extra notes...'
-                />
-              </div>
-
-              <div className='rounded-lg bg-blue-50 p-4 text-sm text-blue-700'>
-                <p>
-                  Note: <code>DatePickerField</code>, <code>MultiSelect</code>,{' '}
-                  <code>CustomCheckBox</code>, <code>CustomSelect</code>, and{' '}
-                  <code>CustomSelectWithStatus</code> use the <code>control</code> proptype for deep
-                  integration with <code>react-hook-form&apos;s</code> state, while{' '}
-                  <code>CustomInput</code>, <code>CustomSearch</code>, and{' '}
-                  <code>CustomTextAria</code> use the classic <code>register</code> pattern.
-                </p>
-              </div>
-            </div>
-          </div>
+          <HorizonalScrollare />
         </Card>
       </section>
 
@@ -382,6 +245,8 @@ const Page = () => {
                 <div className='col-span-6 flex items-end pb-2 md:col-span-4'>
                   {render('notifications')}
                 </div>
+                <div className='col-span-12 md:col-span-6'>{render('dueDate')}</div>
+                <div className='col-span-12 md:col-span-6'>{render('tags')}</div>
 
                 <div className='col-span-12 mt-4 border-t pt-6'>
                   <h3 className='mb-4 text-lg font-semibold'>Field Array (Steps)</h3>
@@ -415,7 +280,6 @@ const Page = () => {
           </SchemaForm>
         </Card>
       </section>
-      {/* <BugReportForm/> */}
     </Container>
   );
 };

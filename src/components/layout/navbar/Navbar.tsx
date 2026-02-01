@@ -40,7 +40,7 @@ const Navbar = ({ logo, token, profileData }: NavbarProps) => {
   return (
     <>
       <Container>
-        <nav className='z-[999] mx-auto mt-[30px] flex h-[140px] max-w-[1088px] flex-col items-center justify-center gap-2 rounded-[27px] bg-gradient-to-r from-[#62C483] to-[#006838] sm:h-[116px] sm:flex-row'>
+        <nav className='z-[999] mx-auto mt-[30px] flex h-[140px] flex-col items-center justify-center gap-2 rounded-[27px] bg-primary text-primary-foreground sm:h-[116px] sm:flex-row'>
           <Link href={`/${locale}`} className='sm:hidden'>
             <Image
               src={logo || '/images/Linkora_logo.svg'}
