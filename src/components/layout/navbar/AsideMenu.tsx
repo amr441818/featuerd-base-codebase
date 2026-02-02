@@ -73,8 +73,7 @@ function AsideMenu({
                 onClick={() => setOpen(false)}
               >
                 <Link
-                  locale={lang}
-                  href={item.path}
+                  href={`/${lang}/${item.path}`}
                   className='text-white'
                   onClick={() => setOpen(false)}
                 >

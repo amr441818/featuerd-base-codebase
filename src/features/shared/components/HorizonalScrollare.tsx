@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { useDominantBg } from '@/components/useDominantBg';
 
 export interface Artwork {
   artist: string;
@@ -30,6 +31,35 @@ export const works: Artwork[] = [
   },
 ];
 
+function ArtworkCard({ artwork }: { artwork: Artwork }) {
+  const bg = useDominantBg(artwork.art);
+
+  return (
+    <figure className='shrink-0'>
+      <div className='relative overflow-hidden rounded-md'>
+        {/* الخلفية */}
+        <div
+          className='absolute inset-0 z-0'
+          style={{ backgroundColor: bg, filter: 'blur(20px)' }}
+        />
+
+        {/* الصورة */}
+        <Image
+          alt={`Photo by ${artwork.artist}`}
+          className='relative z-10 aspect-[3/4] h-fit w-fit object-contain'
+          height={250}
+          width={200}
+          src={artwork.art}
+        />
+      </div>
+
+      <figcaption className='pt-2 text-xs text-muted-foreground'>
+        Photo by <span className='font-semibold text-foreground'>{artwork.artist}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 export function HorizonalScrollare() {
   return (
     <div
@@ -49,20 +79,7 @@ export function HorizonalScrollare() {
       <ScrollArea className='w-96 whitespace-nowrap rounded-md border'>
         <div className='flex w-max space-x-4 p-4'>
           {works.map((artwork) => (
-            <figure className='shrink-0' key={artwork.artist}>
-              <div className='overflow-hidden rounded-md'>
-                <Image
-                  alt={`Photo by ${artwork.artist}`}
-                  className='aspect-[3/4] h-fit w-fit object-cover'
-                  height={250}
-                  src={artwork.art}
-                  width={200}
-                />
-              </div>
-              <figcaption className='pt-2 text-xs text-muted-foreground'>
-                Photo by <span className='font-semibold text-foreground'>{artwork.artist}</span>
-              </figcaption>
-            </figure>
+            <ArtworkCard key={artwork.artist} artwork={artwork} />
           ))}
         </div>
         <ScrollBar orientation='horizontal' />
