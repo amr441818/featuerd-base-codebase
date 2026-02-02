@@ -1,33 +1,18 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { useTranslations } from 'next-intl';
-
-const Language = ({ isMobile }: { isMobile?: boolean }) => {
+const Language = () => {
   const t = useTranslations('navbarFooter');
-
+  const locale = useLocale();
+  const router = useRouter();
   const pathname = usePathname();
-  const place = pathname.split('/').pop();
-
-  console.log('pathname', pathname);
-  console.log('place', place);
 
   const toggleLanguage = () => {
-    // const newLang = lang === "en" ? "ar" : "en";
-    // const newPath = `/${newLang}${pathname.replace(/^\/(en|ar)/, "")}`; // Replace language in URL
-    // // router.push(newPath);
-    // window.location.href = newPath
-    // console.log("newPath.....................", newPath);
-
-    const newLang = 'en';
-
-    const currentUrl = window.location.href;
-    const url = new URL(currentUrl);
-    const pathWithoutLang = url.pathname.replace(/^\/(en|ar)/, '');
-    const newPath = `/${newLang}${pathWithoutLang}${url.search}`;
-
-    window.location.href = newPath;
+    const newLang = locale === 'en' ? 'ar' : 'en';
+    router.replace(pathname, { locale: newLang });
+    // window.location.reload();
   };
 
   return (
@@ -49,25 +34,7 @@ const Language = ({ isMobile }: { isMobile?: boolean }) => {
               />
             </g>
           </svg>
-          {!isMobile && (
-            <>
-              <span className='text-[10px] text-[#808080]'>{t('language')}</span>
-              {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="5"
-            viewBox="0 0 17 5"
-          >
-            <path
-              id="Polygon_6"
-              data-name="Polygon 6"
-              d="M7.993.3A1,1,0,0,1,9.007.3l4.828,2.84A1,1,0,0,1,13.328,5H3.672a1,1,0,0,1-.507-1.862Z"
-              transform="translate(17 5) rotate(180)"
-              fill="#969696"
-            />
-          </svg> */}
-            </>
-          )}
+          <span className='text-[10px] text-[#808080]'>{t('language')}</span>
         </button>{' '}
       </div>
     </>

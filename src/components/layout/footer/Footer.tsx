@@ -1,7 +1,3 @@
-'use client';
-
-import React from 'react';
-
 import { Container } from '@/features/shared';
 
 import ContactUs from './ContactUs';
