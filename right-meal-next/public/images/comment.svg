@@ -1,0 +1,9 @@
+<svg id="vuesax_broken_message-text" data-name="vuesax/broken/message-text" xmlns="http://www.w3.org/2000/svg" width="18.733" height="18.733" viewBox="0 0 18.733 18.733">
+  <g id="message-text">
+    <path id="Vector" d="M0,4.683Q0,0,4.683,0h6.244q4.683,0,4.683,4.683v3.9q0,4.683-4.683,4.683h-.39a.791.791,0,0,0-.624.312L8.742,15.143a1.109,1.109,0,0,1-1.873,0L5.7,13.582a.882.882,0,0,0-.624-.312h-.39C1.561,13.269,0,12.489,0,8.586V7.806" transform="translate(1.561 1.561)" fill="none" stroke="#bbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    <path id="Vector-2" data-name="Vector" d="M0,0H.788" transform="translate(12.481 6.244)" fill="none" stroke="#bbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    <path id="Vector-3" data-name="Vector" d="M0,0H4.3" transform="translate(5.464 6.244)" fill="none" stroke="#bbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    <path id="Vector-4" data-name="Vector" d="M0,0H4.683" transform="translate(5.464 10.147)" fill="none" stroke="#bbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+    <path id="Vector-5" data-name="Vector" d="M0,0H18.733V18.733H0Z" fill="none" opacity="0"/>
+  </g>
+</svg>

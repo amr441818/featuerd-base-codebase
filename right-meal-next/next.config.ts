@@ -1,0 +1,28 @@
+import { NextConfig } from 'next';
+
+import bundleAnalyzer from '@next/bundle-analyzer';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+// 1. Create analyzer instance
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+// 2. Create next-intl plugin
+const withNextIntl = createNextIntlPlugin();
+
+// 3. Your base Next.js config
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+   output: "standalone",
+  images: {
+    domains: [
+      'live.therightmeal.com',
+      'images.unsplash.com',
+      'live.therightmeal.com/storage',
+    ],
+  },
+};
+
+// 4. Combine both plugins
+export default withBundleAnalyzer(withNextIntl(nextConfig));
