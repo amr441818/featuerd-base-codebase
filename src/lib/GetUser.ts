@@ -3,6 +3,7 @@
 import { cookies } from 'next/headers';
 
 import { getServerSession } from 'next-auth';
+import { getLocale } from 'next-intl/server';
 
 import { authOptions } from '@/features/auth';
 import { AuthResponse } from '@/features/shared/types/global copy';
@@ -11,7 +12,7 @@ export const GetUSer = async () => {
   const userData = (await getServerSession(authOptions)) as AuthResponse | null;
   const cookieStore = await cookies();
 
-  const lang = cookieStore.get('NEXT_LOCALE')?.value || 'en';
+  const lang = cookieStore.get('NEXT_LOCALE')?.value || (await getLocale()) || 'en';
 
   const token = userData?.accessToken ?? null;
 

@@ -24,9 +24,8 @@ export const apiServiceCall = async ({
 
   if (isServer) {
     const { headers: userHeaders } = await GetUSer();
-    finalHeaders = { ...finalHeaders, ...userHeaders };
+    finalHeaders = { ...userHeaders, ...finalHeaders };
   }
-
   try {
     const response = await axios({
       method: method?.toUpperCase() || 'GET',
