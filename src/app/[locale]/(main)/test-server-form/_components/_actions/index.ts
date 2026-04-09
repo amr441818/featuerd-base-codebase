@@ -11,12 +11,7 @@ export async function testServerAction(
   prevState: ServerState<FormType>,
   formData: FormData,
 ): Promise<ServerState<FormType>> {
-  const data = {
-    name: formData.get('name') as string,
-    email: formData.get('email') as string,
-    message: formData.get('message') as string,
-  };
-
+  const data = Object.fromEntries(formData.entries());
   /**
    * 🛡️ الفلديشن (Client-side validation bypass protection)
    */

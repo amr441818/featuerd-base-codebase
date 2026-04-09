@@ -50,7 +50,7 @@ export function useServerForm<T extends FieldValues>({
   const form = useForm<T>({
     resolver: zodResolver(schema),
     defaultValues,
-    mode: 'onSubmit',
+    mode: 'onChange',
   });
 
   /**
