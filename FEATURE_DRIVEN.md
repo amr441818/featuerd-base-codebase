@@ -39,10 +39,11 @@ features/
 ### Importing
 
 - Import from feature public APIs (index.ts), not internal modules:
+
   ```typescript
   // Good
   import { UserProfile } from '@/features/users';
-  
+
   // Avoid
   import { UserProfile } from '@/features/users/components/user-profile';
   ```
@@ -62,6 +63,7 @@ features/
 ## When to Create a New Feature
 
 Create a new feature when you have:
+
 1. A distinct business domain or user workflow
 2. A set of related components, logic, and data
 3. Functionality that could potentially be reused or extracted
