@@ -67,3 +67,73 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ----------------- loading --------------------- */
+#loader {
+  .absolute {
+    position: absolute;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .loader {
+    margin: 0.2em 0;
+  }
+  .w-2 {
+    width: 1em;
+  }
+  .dash {
+    animation:
+      dashArray 3s ease-in-out infinite,
+      dashOffset 3s linear infinite;
+  }
+  .spin {
+    animation:
+      spinDashArray 3s ease-in-out infinite,
+      spin 3s ease-in-out infinite,
+      dashOffset 3s linear infinite;
+    transform-origin: center;
+  }
+}
+@keyframes dashArray {
+  0% {
+    stroke-dasharray: 0 1 359 0;
+  }
+  33.3% {
+    stroke-dasharray: 0 359 1 0;
+  }
+  66.6%,
+  100% {
+    stroke-dasharray: 359 1 0 0;
+  }
+}
+@keyframes spinDashArray {
+  0% {
+    stroke-dasharray: 360 0;
+  }
+  33.3% {
+    stroke-dasharray: 0 360;
+  }
+  66.6%,
+  100% {
+    stroke-dasharray: 360 0;
+  }
+}
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 365;
+  }
+  66.6%,
+  100% {
+    stroke-dashoffset: 5;
+  }
+}
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  66.6%,
+  100% {
+    rotate: 360deg;
+  }
+}
