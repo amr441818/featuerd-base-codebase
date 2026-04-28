@@ -139,6 +139,12 @@ export default function CornerShape() {
           <h1>Corner Morph Section</h1>
           <p>Scroll to see shape transformation magic ✨</p>
         </section>
+
+        <div className={`cornerShape h-[350px] max-w-[340px]`}>sdsfdafd</div>
+
+        <div className='mt-3 h-[500px] w-full bg-red-300'>
+          <div className='@container'></div>
+        </div>
       </Container>
     </div>
   );

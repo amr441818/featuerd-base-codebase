@@ -137,3 +137,59 @@
     rotate: 360deg;
   }
 }
+
+/* relative flex h-[350px] max-w-[300px] items-center justify-center overflow-hidden bg-red-200/10 p-4 drop-shadow-xl */
+
+.cornerShape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* height: 350px; */
+  /* max-width: 300px; */
+  overflow: hidden;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 4px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  border-radius: 16px;
+  corner-shape: scoop;
+}
+
+.cornerShape::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  z-index: -10;
+  border-radius: 16px;
+  corner-shape: scoop;
+  background-color: white;
+}
+
+.cornerShape::before {
+  content: '';
+  position: absolute;
+  z-index: -99;
+  width: 150%;
+  height: 150%;
+  border-radius: 16px;
+  corner-shape: scoop;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #ffd36e,
+    #ffb000,
+    #ff5a00,
+    #ff2d00
+  );
+  animation: spinCornerShape 3s linear infinite;
+}
+
+@keyframes spinCornerShape {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
